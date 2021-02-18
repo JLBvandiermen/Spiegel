@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="120"> 
+    <title>Smart Mirror</title>
+      <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+      <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;900&display=swap" rel="stylesheet">
+      <script src="https://kit.fontawesome.com/cd13cb7047.js" crossorigin="anonymous"></script>
+  </head>
+  <body>  
+      <p class="tijd"id="time"></p>
+      <div class=calender>
+            <div>{{ calender }}</div>
+            <div>{{ calender1 }}</div>
+            <div >{{ calender2 }}</div>
+        </div>
+      <p id="date"></p>
+      <div class="weer">
+      <div class="weer1">TEMP {{ temp }} graden</div>
+        <div class="weericon">
+        {% if bewolking == "wolken" %}
+            <i class="fas fa-cloud" style="color: gray"></i>
+        {% elif bewolking == "regen" %} 
+            <i class="fas fa-cloud-showers-heavy" style="color: dodgerblue"></i>
+        {% elif bewolking == "sneeuw" %} 
+            <i class="fas fa-snowman"></i>
+        {% else %}
+            <i class="fas fa-sun" style="color: yellow"></i>     
+        {% endif %}
+        </div>
+      <div class="weer1">MAX TEMP {{ maxtemp }} graden</div>
+      <div class="weer1">REGEN {{ regen }}</div>
+      </div>
+      <br>
+    <div class="Uithof">
+      <i class="fas fa-bus" style="color: red"></i>
+      <p class="break" style="word-break: break-word;">{{ bus1 }}</p>
+      <p style="margin-top: -22px; margin-bottom: 38px;">{{ tussenstuk1 }}</p>
+      <p class="break" style="word-break: break-word;">{{ bus2 }}</p>
+      <p style="margin-top: -22px; margin-bottom: 38px;">{{ tussenstuk2 }}</p>
+      <p class="break" style="word-break: break-word;">{{ bus3 }}</p>
+      <p style="margin-top: -22px; margin-bottom: 38px;">{{ tussenstuk3 }}</p>
+      <p class="break" style="word-break: break-word;">{{ bus4 }}</p>
+      <p style="margin-top: -22px; margin-bottom: 38px;">{{ tussenstuk4 }}</p>
+      <p class="break" style="word-break: break-word;">{{ bus5 }}</p>
+      <p style="margin-top: -22px; margin-bottom: 38px;">{{ tussenstuk5 }}</p>
+      <p class="break" style="word-break: break-word;">{{ bus6 }}</p>
+      <p style="margin-top: -22px; margin-bottom: 38px;">{{ tussenstuk6 }}</p>
+      <p class="break" style="word-break: break-word;">{{ bus7 }}</p>
+      <p style="margin-top: -22px; margin-bottom: 38px;">{{ tussenstuk7 }}</p>
+      <p class="break" style="word-break: break-word;">{{ bus8 }}</p>
+      <p style="margin-top: -22px; margin-bottom: 38px;">{{ tussenstuk8 }}</p>
+      <p class="break" style="word-break: break-word;">{{ bus9 }}</p>
+      <p style="margin-top: -22px; margin-bottom: 38px;">{{ tussenstuk9 }}</p>
+      <p class="break" style="word-break: break-word;">{{ bus10 }}</p>
+      <p style="margin-top: -22px; margin-bottom: 38px;">{{ tussenstuk10 }}</p>
+      <p class="break" style="word-break: break-word;">{{ bus11 }}</p>
+      <p style="margin-top: -22px; margin-bottom: 38px;">{{ tussenstuk11 }}</p>
+      <p class="break" style="word-break: break-word;">{{ bus12 }}</p>
+      <p style="margin-top: -22px; margin-bottom: 38px;">{{ tussenstuk12 }}</p>
+      <p class="break" style="word-break: break-word;">{{ bus13 }}</p>
+      <p style="margin-top: -22px; margin-bottom: 38px;">{{ tussenstuk13 }}</p>
+      <p class="break" style="word-break: break-word;">{{ bus14 }}</p>
+      <p style="margin-top: -22px; margin-bottom: 38px;">{{ tussenstuk14 }}</p>
+      <p class="break" style="word-break: break-word;">{{ bus15 }}</p>
+      <p style="margin-top: -22px; margin-bottom: 38px;">{{ tussenstuk15 }}</p>
+      <p class="break" style="word-break: break-word;">{{ bus16 }}</p>
+      <p style="margin-top: -22px; margin-bottom: 38px;">{{ tussenstuk16 }}</p>
+      <p class="break" style="word-break: break-word;">{{ bus17 }}</p>
+      <p style="margin-top: -22px; margin-bottom: 38px;">{{ tussenstuk17 }}</p>
+      <p class="break" style="word-break: break-word;">{{ bus18 }}</p>
+      <p style="margin-top: -22px; margin-bottom: 38px;">{{ tussenstuk18 }}</p>
+        
+    </div>
+      <br>
+      <br>
+    <div class="NS">
+        <p class="it"><i class="fas fa-chart-line" style="color: greenyellow"></i><br>{{ avarage }}{{ stonk }}</p>
+      <!-- <p class="breakit" style="margin-bottom: -57px; word-break: break-word;">{{ het }}</p>
+      <p class="breakit" style="word-break: break-word;">{{ de1 }}</p>
+      <p style="margin-top: -22px; margin-bottom: 38px;">{{ between1 }}</p>
+      <p class="breakit" style="word-break: break-word;">{{ de2 }}</p>
+      <p style="margin-top: -22px; margin-bottom: 38px;">{{ between2 }}</p>
+      <p class="breakit" style="word-break: break-word;">{{ de3 }}</p>
+      <p style="margin-top: -22px; margin-bottom: 38px;">{{ between3 }}</p>
+      <p class="breakit" style="word-break: break-word;">{{ de4 }}</p>
+      <p style="margin-top: -22px; margin-bottom: 38px;">{{ between4 }}</p>
+      <p class="breakit" style="word-break: break-word;">{{ de5 }}</p>
+      <p style="margin-top: -22px; margin-bottom: 38px;">{{ between5 }}</p>
+      <p class="breakit" style="word-break: break-word;">{{ de6 }}</p>
+      <p style="margin-top: -22px; margin-bottom: 38px;">{{ between6 }}</p>
+      <p class="breakit" style="word-break: break-word;">{{ de7 }}</p>
+      <p style="margin-top: -22px; margin-bottom: 38px;">{{ between7 }}</p>
+      <p class="breakit" style="word-break: break-word;">{{ de8 }}</p>
+      <p style="margin-top: -22px; margin-bottom: 38px;">{{ between8 }}</p>
+      <p class="breakit" style="word-break: break-word;">{{ de9 }}</p>
+      <p style="margin-top: -22px; margin-bottom: 38px;">{{ between9 }}</p>
+      <p class="breakit" style="word-break: break-word;">{{ de10 }}</p>
+      <p style="margin-top: -22px; margin-bottom: 38px;">{{ between10 }}</p> -->
+      </div>
+      
+    <div class="Nieuws">
+        <div id="changeText">{{ test1 }}</div>
+    </div>
+      <div class="inspirerend">
+          <div id=inspir>{{ inspirerend }}</div>
+      </div>
+      <script type="text/javascript">
+        var eles = document.querySelectorAll('.break');
+
+          // convert to array(or use Array.from) and iterate over them
+        [].slice.call(eles).forEach(function(ele) {
+            ele.innerHTML = ele.innerHTML.replace(/P/g, '<br/><br>')
+        });
+        var eles = document.querySelectorAll('.breakit');
+
+          // convert to array(or use Array.from) and iterate over them
+        [].slice.call(eles).forEach(function(ele) {
+            ele.innerHTML = ele.innerHTML.replace(/CS/g, '<br/><br>')
+        });
+        var eles = document.querySelectorAll('.it');
+
+          // convert to array(or use Array.from) and iterate over them
+        [].slice.call(eles).forEach(function(ele) {
+            ele.innerHTML = ele.innerHTML.replace(/%/g, '%<br>')
+        });
+          
+    window.onload = setInterval(clock,1000);
+
+    function clock()
+    {
+	  var d = new Date();
+	  
+	  var date = d.getDate();
+	  
+	  var month = d.getMonth();
+	  var montharr =["Januari","Februari","Maart","April","Mei","Juni","Juli","Augustus","September","October","November","December"];
+	  month=montharr[month];
+	  
+	  var year = d.getFullYear();
+	  
+	  var day = d.getDay();
+	  var dayarr =["Zondag","Maandag","Dinsdag","Woensdag","Donderdag","Vrijdag","Zaterdag"];
+	  day=dayarr[day];
+	  
+	  var hour =d.getHours();
+      var min = d.getMinutes();
+	  var sec = d.getSeconds();
+      var extra = "";
+      var extra1 = "";
+      var extra2 = "";
+      if (sec < 10){
+        extra = "0";
+      }
+      if (min < 10){
+        extra1 = "0";
+      }
+      if (hour < 10){
+        extra2 = "0";
+      }
+	  document.getElementById("date").innerHTML=day+" "+date+" "+month+" "+year;
+	  document.getElementById("time").innerHTML=extra2+hour+" : "+extra1+min+" : "+extra+sec;
+    }
+  </script>
+      
+      <script>
+        var text = ["{{ test1 }}","{{ test2 }}", "{{ test3 }}", "{{ test4 }}", "{{ test5 }}", "{{ test6 }}", "{{ test7 }}", "{{ test8 }}", "{{ test9 }}", "{{ test10 }}", "{{ test11 }}", "{{ test12 }}", "{{ test13 }}", "{{ test14 }}", "{{ test15 }}", "{{ test16 }}", "{{ test17 }},", "{{ test18 }}", "{{ test19 }}", "{{ test20 }}", "{{ test21 }}", "{{ slash }}"];
+        var l = text.indexOf("/");
+  	    text.length=l;
+        var counter = 0;
+        var elem = document.getElementById("changeText");
+        var inst = setInterval(change, 6000);
+
+        function change() {
+            elem.innerHTML = text[counter];
+            counter++;
+            if (counter >= text.length) {
+                counter = 0;
+                // clearInterval(inst); // uncomment this if you want to stop refreshing after one cycle
+            }
+        }
+      </script>
+      
+      
+  </body>
+</html>
