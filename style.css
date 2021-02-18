@@ -1,0 +1,115 @@
+body {
+    background: black !important;
+    color: white !important;
+    font-family: 'Titillium Web', sans-serif !important;
+}
+.it {
+    margin-left: 20%;
+    margin-top: -13%;
+}
+.Nieuws {
+    font-size: 25px;
+    position: absolute;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); 
+    -webkit-animation: flickerAnimation 6s infinite;
+    -moz-animation: flickerAnimation 6s infinite;
+    -o-animation: flickerAnimation 6s infinite;
+    animation: flickerAnimation 6s infinite;  
+} 
+.Uithof{
+    font-size: 20px;
+    margin-top: -23%;
+    margin-right: 0%;
+    float: right;
+    width: 330px;
+}
+.NS {
+    font-size: 20px;
+    margin-left: 20px;
+    float: left;
+    width: 330px;
+    margin-top: -22%;
+}
+.tijd {
+    font-size: 30px;
+    text-align: center;
+}
+.weer {
+    margin-top: 10%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 300px;
+    font-size: 22px;
+}
+.weer1 {
+    margin-bottom: 2%;
+}
+.weericon {
+    margin-top: -13%;
+    margin-left: 65%;
+}
+.inspirerend {
+    font-style: oblique;
+    position: absolute;
+    margin-top: 11%;
+    margin-bottom: 1%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); 
+    font-size: auto;
+}
+.calender {
+    text-align: left;
+    position: absolute;
+    margin-top: 7%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); 
+    font-size: auto;
+}
+#date{
+    font-size: 20px;
+    text-align: center;
+}
+
+@keyframes flickerAnimation {
+  0%   { opacity:0; }
+  50%  { opacity:1; }
+  100% { opacity:0; }
+}
+@-o-keyframes flickerAnimation{
+  0%   { opacity:0; }
+  50%  { opacity:1; }
+  100% { opacity:0; }
+}
+@-moz-keyframes flickerAnimation{
+  0%   { opacity:0; }
+  50%  { opacity:1; }
+  100% { opacity:0; }
+}
+@-webkit-keyframes flickerAnimation{
+  0%   { opacity:0; }
+  50%  { opacity:1; }
+  100% { opacity:0; }
+}
+@media only screen and (max-width: 1024px) {
+  /* For tablets: */
+    .Uithof{width: 220px; margin-top: -40%; font-size: 23px;}
+    .NS{width: 300px; margin-top: -46%; font-size: 23px; margin-left: -5%;}
+    .weer{font-size: 22px; margin-top: 19%; width: 330px;}
+    .weer1{margin-bottom: 2%; margin-top: 2%;}
+    .weericon {margin-top: 0%;margin-left: 65%;}
+    .calender{font-size: 22px; margin-top: 15%; margin-left: -17%;}
+    .inspirerend{z-index: -1; font-size: 20px; margin-top: 6%; left: 0%;margin-right: 0%; transform: translate(0%, 0%); width: 100%;}
+    .tijd{font-size: 40px; margin-top: -1%;}
+    .Nieuws{z-index: -1; margin-top: -4%; left: 0%;margin-right: 0%; transform: translate(0%, 0%); width: 100%;}
+    #changeText{text-align: center;}
+    #inspir{text-align: center;}
+    #date{font-size: 30px;}
+}
